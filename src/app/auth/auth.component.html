@@ -1,0 +1,68 @@
+<!-- component -->
+<!-- This is an example component -->
+<div class="h-screen font-sans login bg-cover">
+    <div class="container mx-auto h-full flex flex-1 justify-end items-center">
+        <div class="w-full max-w-lg md:mt-16">
+            <div class="flex items-center justify-center max-w-sm ">
+                <img [src]="ubaIcon" alt="Image" class="w-10 h-10">
+            </div>
+            <div class="flex max-w-sm m-4 justify-center">
+                <h2 class="text-3xl font-bold text-white">Sign in to your account</h2>
+            </div>
+
+            <p class="flex max-w-sm mx-4 mt-2 mb-8 justify-center text-white">Welcome back! Please enter your details</p>
+            <div class="leading-loose">
+                <form class="max-w-sm m-3 p-8 bg-white rounded-lg shadow-xl">
+                    <div class="mb-4">
+                        <label class="block text-gray-500 text-sm font-semibold mb-2" for="username">
+                            Email
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="email" type="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-1">
+                        <label class="block text-gray-500 text-sm font-semibold mb-2" for="password">
+                            Password
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                            id="password" type="password" placeholder="******************">
+                        <!-- <p class="text-red-500 text-xs italic">Please choose a password.</p> -->
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-500 text-sm font-semibold mb-2" for="username">
+                            Token
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline"
+                            id="username" type="text" placeholder="Enter your token">
+                    </div>
+                    <div>
+                        <button (click)="routeToDashboard()"
+                            class="w-full bg-[#CC0000] hover:bg-[#5c6881] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            type="button">
+                            Sign In
+                        </button>
+                        <!-- <a class="inline-block align-baseline font-bold text-sm text-[#CC0000] hover:text-[#CC0000]"
+                            href="#">
+                            Forgot Password?
+                        </a> -->
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .login {
+
+        background: url('./assets/auth-screen.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 30% 30%;
+
+    }
+</style>
