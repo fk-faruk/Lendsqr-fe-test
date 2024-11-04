@@ -138,27 +138,28 @@
                 </th>
             </tr>
         </thead>
-        <tbody *ngFor="let data of userData">
+        <tbody *ngFor="let data of users">
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    {{userData[0].organizations}}
+
+                <th scope="row" class="px-6 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{data.profile.organization}}
                 </th>
-                <td class="px-6 py-4">
-                    {{userData[0].username}}
+                <td class="px-6 py-1">
+                    {{data.username}}
                 </td>
-                <td class="px-6 py-4">
-                    {{userData[0].email}}
+                <td class="px-6 py-1">
+                    {{data.email}}
                 </td>
-                <td class="px-6 py-4">
-                    {{userData[0].phone_number}}
+                <td class="px-6 py-1">
+                    {{data.profile.phone}}
                 </td>
-                <td class="px-6 py-4">
-                    {{userData[0].date_joined}}
+                <td class="px-6 py-1">
+                    {{data.date_joined}}
                 </td>
-                <td class="px-6 py-4">
-                    {{userData[0].status}}
+                <td class="px-6 py-1">
+                    {{data.profile.status}}
                 </td>
-                <td class="px-6 py-4 text-right ">
+                <td class="px-6 py-1 text-right ">
                     <!-- <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" (click)="showCard()">Edit</a> -->
                     <div (click)="showCard()" class="hover:bg-gray-200 rounded-full h-[2.8em] w-[2.8em] p-2 cursor-pointer">
                     <svg  xmlns="http://www.w3.org/2000/svg"  width="1.7em" height="1.7em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a2 2 0 1 0 0 4a2 2 0 0 0 0-4m-2 9a2 2 0 1 1 4 0a2 2 0 0 1-4 0m0 7a2 2 0 1 1 4 0a2 2 0 0 1-4 0"/></svg>
@@ -199,7 +200,7 @@
               </div>
             </tr>
             <!-- <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <th scope="row" class="px-6 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     Lendsqr
                 </th>
                 <td class="px-6 py-4">
@@ -407,6 +408,35 @@
             </tr> -->
         </tbody>
     </table>
+
+    <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4" aria-label="Table navigation">
+        <span class="pl-7 text-sm font-normal text-gray-500 dark:text-gray-400">
+            Showing
+            <span class="font-semibold text-gray-900 dark:text-white"> {{ (currentPage * itemsPerPage)  + 1 }} -  {{ ((currentPage + 1) * itemsPerPage) > userData.length ? userData.length : ((currentPage + 1) * itemsPerPage) }}</span>
+            of
+            <span class="font-semibold text-gray-900 dark:text-white">{{userData.length}}</span>
+        </span>
+        <ul class="pr-7 inline-flex items-stretch -space-x-px">
+            <li>
+                <button  (click)="previousPage()" [disabled]="currentPage === 0" class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                   
+                    <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span >Previous</span>
+                  </button>
+            </li>
+          
+            <li>
+                <button (click)="nextPage()" [disabled]="currentPage >= totalPages - 1" class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                    <span >Next</span>
+                    <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </li>
+        </ul>
+    </nav>
 </div>
 
 
