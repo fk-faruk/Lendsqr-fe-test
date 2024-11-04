@@ -12,6 +12,14 @@ export class AuthComponent {
   constructor(private router: Router) {}
   
   routeToDashboard() {
-    this.router.navigate(['/dashboard/home']);
+    this.router.navigate(['/dashboard/users']);
+  }
+
+
+
+ 
+
+  ngOnInit() {
+
   }
 }
