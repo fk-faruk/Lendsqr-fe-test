@@ -2,29 +2,34 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ModulesComponent } from './modules.component';
 import { MediaComponent } from './media/media.component';
-import { ProductsComponent } from './products/products.component';
-import { CoupenListComponent } from './coupens/coupen-list/coupen-list.component';
+import { UsersComponent } from './users/users.component';
+import { UsersDetailsComponent } from './users-details/users-details.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  // { path: '', redirectTo: 'home', pathMatch: 'full'},
+
   {
     path: '',
     component: ModulesComponent,
     children: [
+    
+      // {
+      //   path: 'employee',
+      //   component: MediaComponent
+      // },
       {
-        path: 'home',
-        component: ProductsComponent
+        path: 'users',
+        component: UsersComponent
       },
       {
-        path: 'employee',
-        component: MediaComponent
-      },
-      {
-        path: 'business-office/viewsols',
-        component: CoupenListComponent
+        path: 'user-profile',
+        component: UsersDetailsComponent
       }
+    
     ]
-  }
+  },
+
+  
   // { path: 'media', component: MediaComponent },
 ];
 

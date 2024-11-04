@@ -4,27 +4,32 @@ import { CommonModule } from '@angular/common';
 import { ModulesRoutingModule } from './modules-routing.module';
 import { ModulesComponent } from './modules.component';
 
-import { BodyComponent } from './body/body.component';
+// import { BodyComponent } from './Navbar/navbar.component';
+import { NavbarComponent } from './Navbar/navbar.component'
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { StatisticsComponent } from './statistics/statistics.component';
-import { PagesComponent } from './pages/pages.component';
 import { MediaComponent } from './media/media.component';
-import { SettingsComponent } from './settings/settings.component';
 import { SublevelMenuComponent } from './sidenav/sublevel-menu.component';
+import { UsersComponent } from './users/users.component';
+import { UsersTableComponent } from './users-table/users-table.component';
+import { FormModalComponent } from './components/form-modal/form-modal.component';
+import { UsersDetailsComponent } from './users-details/users-details.component';
+// import { EditModalComponent } from './components/edit-modal/edit-modal.component';
 
 
 @NgModule({
   declarations: [
     ModulesComponent,
-    BodyComponent,
+    NavbarComponent,
     SidenavComponent,
     DashboardComponent,
-    StatisticsComponent,
-    PagesComponent,
     MediaComponent,
-    SettingsComponent,
-    SublevelMenuComponent
+    SublevelMenuComponent,
+    UsersComponent,
+    UsersTableComponent,
+    FormModalComponent,
+    UsersDetailsComponent,
+    // EditModalComponent
   ],
   imports: [
     CommonModule,
