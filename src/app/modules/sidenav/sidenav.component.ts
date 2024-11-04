@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { fadeInOut, INavbarData } from './helper';
 import { navbarData } from './nav-data';
 
+
 interface SideNavToggle {
   screenWidth: number;
   collapsed: boolean;
@@ -34,6 +35,7 @@ export class SidenavComponent implements OnInit {
   screenWidth = 0;
   navData = navbarData;
   multiple: boolean = false;
+  logo : string = 'src\assets\Group.png'
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -48,6 +50,7 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit(): void {
       this.screenWidth = window.innerWidth;
+      this.toggleCollapse()
   }
 
   toggleCollapse(): void {
@@ -62,6 +65,7 @@ export class SidenavComponent implements OnInit {
 
   handleClick(item: INavbarData): void {
     this.shrinkItems(item);
+    
     item.expanded = !item.expanded
   }
 

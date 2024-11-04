@@ -53,7 +53,7 @@
 }
 
 .sidenav-collapsed {
-    width: 16.5625rem;
+    width: 18.5625rem;
 }
 
 .sidenav-nav {
@@ -64,6 +64,7 @@
     flex-direction: column;
     align-items: center;
     cursor: pointer;
+    margin-bottom: 12vh;
 
     .sidenav-nav-item {
         width: 100%;
@@ -73,7 +74,7 @@
             display: flex;
             align-items: center;
             height: 3rem;
-            color: #000;
+            color: #39496c;
             text-decoration: none;
             border-radius: 0.625rem;
             transition: all .3s ease;
@@ -136,7 +137,7 @@
             display: flex;
             align-items: center;
             height: 3rem;
-            color: #000;
+            color: rgb(83, 83, 83);
             text-decoration: none;
             border-radius: 0.625rem;
             transition: all .3s ease;
@@ -146,11 +147,12 @@
                 width: 2rem;
                 min-width: 2rem;
                 margin: 0 0.5rem;
+                // margin-left: 0.rem;
                 text-align: center;
             }
 
             .sublevel-link-text {
-                margin-left: 0.8rem;
+                margin-left: 2.5rem;
             }
         }
 

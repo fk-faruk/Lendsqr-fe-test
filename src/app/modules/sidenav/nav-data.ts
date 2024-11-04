@@ -1,11 +1,57 @@
 import { INavbarData } from "./helper";
 
 export const navbarData: INavbarData[] = [
-    {
-        routeLink: '/dashboard/home',
-        icon: 'fal fa-home',
-        label: 'General'
-    },
+    // {
+    //     routeLink: '/dashboard/home',
+    //     icon: 'fal fa-briefcase',
+    //     label: 'Switch Organization'  
+    // },
+
+    // {
+    //     routeLink: '/dashboard/home',
+    //     icon: 'fal fa-home',
+    //     label: 'Dashboard'
+    // },
+
+
+
+    // {
+    //     routeLink: '/dashboard/home',
+    //     icon: 'fal fa-home',
+    //     label: 'Users'
+    // },
+
+    // {
+    //     routeLink: '/dashboard/home',
+    //     icon: 'fal fa-home',
+    //     label: 'Guarantors'
+    // },
+    // {
+    //     routeLink: '/dashboard/home',
+    //     icon: 'fal fa-home',
+    //     label: 'Decisons Models'
+    // },
+    // {
+    //     routeLink: '/dashboard/home',
+    //     icon: 'fal fa-home',
+    //     label: 'Savings'
+    // },
+    // {
+    //     routeLink: '/dashboard/home',
+    //     icon: 'fal fa-home',
+    //     label: 'Loan Requests'
+    // },
+    // {
+    //     routeLink: '/dashboard/home',
+    //     icon: 'fal fa-home',
+    //     label: 'Whitelist'
+    // },
+    // {
+    //     routeLink: '/dashboard/home',
+    //     icon: 'fal fa-home',
+    //     label: 'Karma'
+    // },
+    
     // {
     //     routeLink: '/dashboard/media',
     //     icon: 'fal fa-box-open',
@@ -42,70 +88,169 @@ export const navbarData: INavbarData[] = [
     //     ]
     // },
     {
-        routeLink: '/dashboard/media',
-        icon: 'fal fa-chart-bar',
-        label: 'Business Office',
+        routeLink: '/lendsqr',
+        icon: 'assets/icons/briefcase 1.svg',
+        label: 'Switch Organization',
         items: [
             {
-                routeLink: '/dashboard/business-office/viewsols',
-                label: 'View Sols'
+                icon: 'assets/icons/home 1.svg',
+                routeLink: '/dashboard',
+                label: 'Dashboard '
             },
+            // {
+            //     routeLink: 'coupens/create',
+            //     label: 'View Off Sols'
+            // }
+        ],
+        secondItems: [
             {
-                routeLink: 'coupens/create',
-                label: 'View Off Sols'
-            }
-        ]
-    },
-    {
-        routeLink: 'employee',
-        icon: 'fal fa-users',
-        label: 'Employee',
-        // items: [
-        //     {
-        //         routeLink: 'coupens/list',
-        //         label: 'List Coupens'
-        //     },
-        //     {
-        //         routeLink: 'coupens/create',
-        //         label: 'Create Coupens'
-        //     }
-        // ]
-    },
-    {
-        routeLink: 'pages',
-        icon: 'fal fa-user-cog',
-        label: 'Users Admin',
-        expanded: false,
-        items: [
-            {
-                routeLink: 'coupens/list',
+                icon: 'assets/icons/user-friends 1.svg',
+                routeLink: '/dashboard',
                 label: 'Users'
             },
             {
-                routeLink: 'coupens/create',
-                label: 'View Users'
-            }
+                icon: 'assets/icons/users 1.svg',
+                routeLink: '/dashboard',
+                label: 'Guarantors'
+            },
+            {
+                icon: 'assets/icons/sack 1.svg',
+                routeLink: '/dashboard',
+                label: 'Loans'
+            },
+            {
+                icon: 'assets/icons/handshake-regular 1.svg',
+                routeLink: '/dashboard',
+                label: 'Decision Models'
+            },
+            {
+                icon: 'assets/icons/piggy-bank 1.svg',
+                routeLink: '/dashboard',
+                label: 'Savings'
+            },
+            {
+                icon: 'assets/icons/Group 104.svg',
+                routeLink: '/dashboard',
+                label: 'Loan Request'
+            },
+            {
+                icon: 'assets/icons/user-check 1.svg',
+                routeLink: '/dashboard',
+                label: 'Whitelist'
+            },
+            {
+                icon: 'assets/icons/user-times 1.svg',
+                routeLink: '/dashboard',
+                label: 'Karma'
+            },
+        ],
+
+        thirdItems: [
+            {
+                icon: 'assets/icons/briefcase 1.svg',
+                routeLink: '/dashboard',
+                label: 'Organization'
+            },
+            {
+                icon: 'assets/icons/Group 104.svg',
+                routeLink: '/dashboard',
+                label: 'Loan Products'
+            },
+            {
+                icon: 'assets/icons/np_bank_148501_000000 1.svg',
+                routeLink: '/dashboard',
+                label: 'Savings Products'
+            },
+            {
+                icon: 'assets/icons/coins-solid 1.svg',
+                routeLink: '/dashboard',
+                label: 'Fees and Charges'
+            }, 
+            {
+                icon: 'assets/icons/icon.svg',
+                routeLink: '/dashboard',
+                label: 'Transactions'
+            },
+            {
+                icon: 'assets/icons/galaxy 1.svg',
+                routeLink: '/dashboard',
+                label: 'Services'
+            },
+            {
+                icon: 'assets/icons/user-cog 1.svg',
+                routeLink: '/dashboard',
+                label: 'Service Amount'
+            },
+            {
+                icon: 'assets/icons/scroll 1.svg',
+                routeLink: '/dashboard',
+                label: 'Settlements'
+            }, 
+            {
+                icon: 'assets/icons/chart-bar 2.svg',
+                routeLink: '/dashboard',
+                label: 'Reports'
+            }, 
+        ],
+        fourthItems: [
+            {
+                icon: 'assets/icons/sliders-h 1.svg',
+                routeLink: '/dashboard',
+                label: 'Preferences'
+            },
+            {
+                icon: 'assets/icons/badge-percent 1.svg',
+                routeLink: '/dashboard',
+                label: 'Fees and Prcing'
+            }, 
+            {
+                icon: 'assets/icons/clipboard-list 1.svg',
+                routeLink: '/dashboard',
+                label: 'Audit Logs'
+            }, 
+            {
+                icon: 'assets/icons/tire 1.svg',
+                routeLink: '/dashboard',
+                label: 'Systems Messages'
+            }, 
         ]
     },
+ 
+    // {
+    //     routeLink: 'pages',
+    //     icon: 'fal fa-user-cog',
+    //     label: 'Users Admin',
+    //     expanded: false,
+    //     items: [
+    //         {
+    //             routeLink: 'coupens/list',
+    //             label: 'Users'
+    //         },
+    //         {
+    //             routeLink: 'coupens/create',
+    //             label: 'View Users'
+    //         }
+    //     ]
+    // },
     // {
     //     routeLink: 'media',
     //     icon: 'fal fa-camera',
     //     label: 'Module 5'
     // },
-    {
-        routeLink: 'settings',
-        icon: 'fal fa-credit-card',
-        label: 'Virtual Card',
-        expanded: false,
-        items: [
-            {
-                routeLink: 'settings/profile',
-                label: 'Manage'
-            },
-            {
-                routeLink: 'settings/customize',
-                label: 'Download Pan'
-            }
-        ]
-    },
+    // {
+    //     routeLink: 'settings',
+    //     icon: 'fal fa-credit-card',
+    //     label: 'Virtual Card',
+    //     expanded: false,
+    //     items: [
+    //         {
+    //             routeLink: 'settings/profile',
+    //             label: 'Manage'
+    //         },
+    //         {
+    //             routeLink: 'settings/customize',
+    //             label: 'Download Pan'
+    //         }
+    //     ]
+    // },
 ];

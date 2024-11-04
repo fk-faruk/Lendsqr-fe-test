@@ -6,6 +6,9 @@ export interface INavbarData {
     label: string;
     expanded?: boolean;
     items?: INavbarData[];
+    secondItems? : INavbarData[]
+    thirdItems? : INavbarData[]
+    fourthItems? : INavbarData[]
 }
 
 export const fadeInOut = trigger('fadeInOut', [
