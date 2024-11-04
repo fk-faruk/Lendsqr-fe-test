@@ -14,11 +14,23 @@ import { Observable } from 'rxjs';
 })
 export class UsersTableComponent {
   @ViewChild('modalContainer', { read: ViewContainerRef })
+
   modalContainer!: ViewContainerRef;
 
   show: boolean = false;
+
   openForm: boolean = false;
+
   userData: Users[] = [];
+
+  users: Users[] = [];
+
+  itemsPerPage = 10;  
+
+  currentPage = 0; 
+
+  totalPages = 0;
+
 
   constructor(
     private modal: ModalService,
@@ -26,17 +38,71 @@ export class UsersTableComponent {
     private api: ApiService
   ) {}
 
-  getUserdetails(){
-    this.api.getUserDetails().subscribe({
-      next: (data: any) => {
-        this.userData = data
-        console.log('data from mocky api>>>>>>>', this.userData);
-      },
-      error: (err) => {
-        console.log('error gotten >>>>', err);
-      },
-    });
+
+
+
+
+
+  // getUserdetails(){
+  //   this.api.getUserDetails().subscribe({
+  //     next: (data: any) => {
+  //       this.users = data
+  //       this.api.setUserData(data)
+  //       console.log('data from mocky api>>>>>>>', this.users);
+  //     },
+  //     error: (err) => {
+  //       console.log('error gotten >>>>', err);
+  //     },
+  //     complete:() => {
+  //       this.userDataObservable()
+  //     }
+  //   });
+  // }
+
+
+
+  userDataObservable() {
+      this.api.getUserData().subscribe({
+        next: ((data) => {
+          this.userData = data
+          console.log('data from mocky api>>>>>>>', this.userData)
+          this.totalPages = Math.ceil(this.userData.length / this.itemsPerPage);
+          this.loadPage()
+        }) ,
+        error: ((err) => {
+          console.log(err)
+        })
+      })
   }
+
+
+
+
+  loadPage() {
+    const startIndex = this.currentPage * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    this.users = this.userData.slice(startIndex, endIndex);
+    
+  }
+
+  nextPage() {
+
+    console.log('nextPage', this.currentPage)
+    console.log('total pages', this.totalPages)
+    if (this.currentPage < this.totalPages - 1) {
+      this.currentPage = this.currentPage + 1;
+      this.loadPage();
+    }
+  }
+
+  previousPage() {
+    if (this.currentPage > 0) {
+      this.currentPage--;
+      this.loadPage();
+    }
+  }
+
+
 
   open() {
     this.openForm = !this.openForm;
@@ -62,6 +128,6 @@ export class UsersTableComponent {
   }
 
   ngOnInit() {
-    this.getUserdetails();
+    // this.getUserdetails();
   }
 }
