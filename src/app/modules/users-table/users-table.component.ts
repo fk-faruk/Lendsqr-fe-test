@@ -43,21 +43,21 @@ export class UsersTableComponent {
 
 
 
-  // getUserdetails(){
-  //   this.api.getUserDetails().subscribe({
-  //     next: (data: any) => {
-  //       this.users = data
-  //       this.api.setUserData(data)
-  //       console.log('data from mocky api>>>>>>>', this.users);
-  //     },
-  //     error: (err) => {
-  //       console.log('error gotten >>>>', err);
-  //     },
-  //     complete:() => {
-  //       this.userDataObservable()
-  //     }
-  //   });
-  // }
+  getUserdetails(){
+    this.api.getUserDetails().subscribe({
+      next: (data: any) => {
+        this.users = data
+        this.api.setUserData(data)
+        console.log('data from mocky api>>>>>>>', this.users);
+      },
+      error: (err) => {
+        console.log('error gotten >>>>', err);
+      },
+      complete:() => {
+        this.userDataObservable()
+      }
+    });
+  }
 
 
 
@@ -128,6 +128,6 @@ export class UsersTableComponent {
   }
 
   ngOnInit() {
-    // this.getUserdetails();
+    this.getUserdetails();
   }
 }
