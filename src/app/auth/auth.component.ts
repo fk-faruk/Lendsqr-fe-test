@@ -20,6 +20,11 @@ export class AuthComponent {
 
   userAuth!: FormGroup 
 
+  show : boolean = false;
+
+  input : string = 'password';
+
+  display : string = ''
 
 
   constructor(private router: Router, private fb : FormBuilder, private auth : AuthserviceService) {}
@@ -43,6 +48,22 @@ export class AuthComponent {
     });
   }
 
+
+  showPassword() {
+    
+    this.show = !this.show;
+    this.input = this.input === 'password' ? 'text' : 'password';
+    // this.show = !this.show
+
+    // if (this.show) {
+    //   this.input = 'text'
+    //   this.display = 'HIDE'
+    // }else {
+    //   this.input = 'password'
+    //   this.display = 'SHOW'
+    // }
+
+  }
   
 
  
