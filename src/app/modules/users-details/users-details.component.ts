@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 
 @Component({
   selector: 'app-users-details',
@@ -8,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class UsersDetailsComponent {
 
-  constructor(private route : Router) {}
+  constructor(private route : Router,  private spinner : NgxSpinnerService) {}
 
 
   userInfo : any 
@@ -21,10 +23,15 @@ export class UsersDetailsComponent {
 
 
   getUserInfo() {
-   const dataFromLS = localStorage.getItem('user-profile')
-   const parsedData =  dataFromLS ? JSON.parse(dataFromLS) : null;
 
-   this.userInfo = parsedData
+    setTimeout(() => {
+      this.spinner.hide();
+      const dataFromLS = localStorage.getItem('user-profile')
+      const parsedData =  dataFromLS ? JSON.parse(dataFromLS) : null;
+   
+      this.userInfo = parsedData
+    }, 3000);
+  
 
    console.log('User info:', this.userInfo);
   //  console.log(`User info: ${this.userInfo}`);
@@ -42,7 +49,9 @@ export class UsersDetailsComponent {
 
 
 ngOnInit() {
+  this.spinner.show();
     this.getUserInfo()
+
 }
 
 
