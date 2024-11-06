@@ -3,7 +3,7 @@ import { ModalService } from 'src/app/services/modal.service';
 import { ViewChild, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
-import { Users } from '../models/users';
+import { Users } from '../../models/users';
 import { Observable } from 'rxjs';
 import { NgxSpinnerService } from 'ngx-spinner';
 

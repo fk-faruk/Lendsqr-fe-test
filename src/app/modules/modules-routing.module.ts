@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ModulesComponent } from './modules.component';
-import { MediaComponent } from './media/media.component';
-import { UsersComponent } from './users/users.component';
-import { UsersDetailsComponent } from './users-details/users-details.component';
+import { UsersComponent } from './components/users/users.component';
+import { UsersDetailsComponent } from './components/users-details/users-details.component';
 import { routeGuard } from '../services/authguard';
 
 const routes: Routes = [

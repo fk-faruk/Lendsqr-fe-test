@@ -5,14 +5,12 @@ import { ModulesRoutingModule } from './modules-routing.module';
 import { ModulesComponent } from './modules.component';
 
 // import { BodyComponent } from './Navbar/navbar.component';
-import { NavbarComponent } from './Navbar/navbar.component'
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { MediaComponent } from './media/media.component';
-import { SublevelMenuComponent } from './sidenav/sublevel-menu.component';
-import { UsersComponent } from './users/users.component';
-import { UsersTableComponent } from './users-table/users-table.component';
-import { UsersDetailsComponent } from './users-details/users-details.component';
+import { NavbarComponent } from './Layouts/Navbar/navbar.component'
+import { SidenavComponent } from './Layouts/sidenav/sidenav.component';
+import { SublevelMenuComponent } from './Layouts/sidenav/sublevel-menu.component';
+import { UsersComponent } from './components/users/users.component';
+import { UsersTableComponent } from './components/users-table/users-table.component';
+import { UsersDetailsComponent } from './components/users-details/users-details.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
 // import { AuthComponent } from '../auth/auth.component';
@@ -25,8 +23,6 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ModulesComponent,
     NavbarComponent,
     SidenavComponent,
-    DashboardComponent,
-    MediaComponent,
     SublevelMenuComponent,
     UsersComponent,
     UsersTableComponent,
