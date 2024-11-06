@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { Users } from '../models/users';
 import { Observable } from 'rxjs';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 
 @Component({
   selector: 'app-users-table',
@@ -30,11 +32,14 @@ export class UsersTableComponent {
 
   totalPages = 0;
 
+  loading: boolean = true
+
 
   constructor(
     private modal: ModalService,
     private route: Router,
-    private api: ApiService
+    private api: ApiService,
+    private spinner : NgxSpinnerService
   ) {}
 
 
@@ -43,6 +48,8 @@ export class UsersTableComponent {
 
 
   getUserdetails(){
+
+      this.spinner.show()
     this.api.getUserDetails().subscribe({
       next: (data: any) => {
         this.users = data
@@ -63,6 +70,7 @@ export class UsersTableComponent {
   userDataObservable() {
       this.api.getUserData().subscribe({
         next: ((data) => {
+          this.spinner.hide()
           this.userData = data
           console.log('data from mocky api>>>>>>>', this.userData)
           this.totalPages = Math.ceil(this.userData.length / this.itemsPerPage);
