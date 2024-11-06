@@ -1,74 +1,133 @@
 <!-- component -->
 <!-- This is an example component -->
 <div class="h-screen font-sans login bg-cover">
+  <div class="flex flex-row h-full">
+    <div
+      class="hidden md:flex h-screen font-sans bg-cover bg-[#FBFCFA] basis-1/2 flex-col justify-center align-middle"
+    >
+      <!-- ghjkl;'' -->
+      <div class="relative inset-x-32 -inset-y-36">
+        <img src="assets/Group.png" alt="" />
+      </div>
 
-    <div class="flex flex-row h-full">
-
-    <div class="hidden md:flex h-screen font-sans bg-cover bg-[#FBFCFA] basis-1/2 flex-col justify-center align-middle">
-        <!-- ghjkl;'' -->
-        <div class="relative  inset-x-32 -inset-y-36">
-            <img src="assets/Group.png" alt="">
-        </div>
-
-        <div class="flex justify-center  items-center">
-            <img src="assets/icons/pablo-sign-in 1.svg" alt=""> 
-        </div>
+      <div class="flex justify-center items-center">
+        <img src="assets/icons/pablo-sign-in 1.svg" alt="" />
+      </div>
     </div>
-    <div class="container mx-auto h-full flex flex-1 justify-center items-center">
-        <div class="w-full max-w-lg md:mt-13">
+    <div
+      class="container mx-auto h-full flex flex-1 justify-center items-center"
+    >
+      <div class="w-full max-w-lg md:mt-13">
+        <div class="md:hidden flex justify-center">
+          <img src="assets/Group.png" alt="" />
+        </div>
 
-            <div class="md:hidden flex justify-center ">
-                <img src="assets/Group.png" alt="">
-            </div>
-          
-            <div class="flex max-w-sm m-4 justify-start">
-                <h2 class="md:text-4xl text-2xl font-bold text-[#213F7D]">Welcome!</h2>
-            </div>
+        <div class="flex max-w-sm m-4 justify-start">
+          <h2 class="md:text-4xl text-2xl font-bold text-[#213F7D]">
+            Welcome!
+          </h2>
+        </div>
 
-            <p class="flex max-w-sm mx-4 mt-2 mb-8 justify-start text-[#52607a]">Enter details to login.</p>
-            <div class="leading-loose">
-                <form class="m-3 flex flex-col gap-4">
-                    <div class="mb-4">
-                        <!-- <label class="block text-gray-500 text-sm font-semibold mb-2" for="username">
+        <p class="flex max-w-sm mx-4 mt-2 mb-8 justify-start text-[#52607a]">
+          Enter details to login.
+        </p>
+        <div class="leading-loose">
+          <form
+            class="m-3 flex flex-col gap-4"
+            action=""
+            [formGroup]="userAuth"
+            (ngSubmit)="submitForm()"
+          >
+            <div class="mb-4">
+              <!-- <label class="block text-gray-500 text-sm font-semibold mb-2" for="username">
                             Email
                         </label> -->
-                        <input
-                            class="shadow appearance-none border w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="email" type="email" placeholder="Email">
-                    </div>
-                    <div class="mb-1">
-                        <!-- <label class="block text-gray-500 text-sm font-semibold mb-2" for="password">
+
+              <input
+                class="shadow appearance-none border w-full py-4 mb-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="email"
+                type="email"
+                placeholder="Email"
+                formControlName="email"
+              />
+
+              <div class="flex-col flex gap-0">
+                <!-- <span
+                            *ngIf="
+                              userAuth.get('email')?.touched 
+                            "
+                            style="color: red; font-size: 1.4vh"
+                          >
+                            *Email field can't be empty
+                            </span> -->
+
+                <span
+                  *ngIf="
+                    userAuth.get('email')?.touched &&
+                    userAuth.get('email')?.invalid
+                  "
+                  style="color: red; font-size: 1.4vh"
+                >
+                  *Please enter a valid email address
+                </span>
+              </div>
+            </div>
+            <div class="mb-1">
+              <!-- <label class="block text-gray-500 text-sm font-semibold mb-2" for="password">
                             Password
                         </label> -->
+                    <div class="flex ">
                         <input
-                            class="shadow appearance-none border  w-full py-4 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                            id="password" type="password" placeholder="password">
-                        <!-- <p class="text-red-500 text-xs italic">Please choose a password.</p> -->
+                        class="shadow appearance-none border w-full py-4 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                        id="password"
+                        type="password"
+                        placeholder="password"
+                        formControlName="password"
+                      />
+                      <div class="flex justify-end mt-3 ">
+                        <div class=" text-center absolute mr-4">
+                            <span class="text-[#3bcac4] text-[12px] font-semibold cursor-pointer">SHOW</span>
+                          </div>
+                      </div>
+                      
                     </div>
-
-                    <div class="mt-[-1vh]">
-                        <a class="inline-block align-baseline font-bold text-sm text-[#3ccac5] hover:text-[#38cecc]"
-                        href="#">
-                        Forgot Password?
-                    </a>
-                    </div>
-                  
-                    <div>
-                        <button (click)="routeToDashboard()"
-                            class="w-full bg-[#3ccac5] hover:bg-[#38cecc] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                            type="button">
-                            LOG IN
-                        </button>
-                       
-                    </div>
-
-                </form>
-
+            
+              <!-- <p class="text-red-500 text-xs italic">Please choose a password.</p> -->
+              <div
+                *ngIf="
+                  userAuth.get('password')?.touched &&
+                  userAuth.get('password')?.invalid
+                "
+                style="color: red; font-size: 1.4vh"
+              >
+                *Password field can't be empty
+              </div>
             </div>
-        </div>
-    </div>
-</div>
 
+            <div class="mt-[-1vh]">
+              <a
+                class="inline-block align-baseline font-bold text-sm text-[#3ccac5] hover:text-[#38cecc]"
+                href="#"
+              >
+                Forgot Password?
+              </a>
+            </div>
+
+            <div>
+              <button
+                [disabled]="!userAuth.valid"
+                [ngClass]="!userAuth.valid ? 'cursor-not-allowed' : ''"
+                class="w-full bg-[#3ccac5] hover:bg-[#38cecc] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="submit"
+              >
+                LOG IN
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- <style>
     .login {
