@@ -12,8 +12,9 @@ import { MediaComponent } from './media/media.component';
 import { SublevelMenuComponent } from './sidenav/sublevel-menu.component';
 import { UsersComponent } from './users/users.component';
 import { UsersTableComponent } from './users-table/users-table.component';
-import { FormModalComponent } from './components/form-modal/form-modal.component';
 import { UsersDetailsComponent } from './users-details/users-details.component';
+// import { AuthComponent } from '../auth/auth.component';
+// import { ReactiveFormsModule , FormsModule} from '@angular/forms';
 // import { EditModalComponent } from './components/edit-modal/edit-modal.component';
 
 
@@ -27,13 +28,15 @@ import { UsersDetailsComponent } from './users-details/users-details.component';
     SublevelMenuComponent,
     UsersComponent,
     UsersTableComponent,
-    FormModalComponent,
     UsersDetailsComponent,
+    // AuthComponent
     // EditModalComponent
   ],
   imports: [
     CommonModule,
-    ModulesRoutingModule
+    ModulesRoutingModule,
+    // ReactiveFormsModule,
+    // FormsModule
   ]
 })
 export class ModulesModule { }
