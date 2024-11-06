@@ -4,6 +4,7 @@ import { ModulesComponent } from './modules.component';
 import { MediaComponent } from './media/media.component';
 import { UsersComponent } from './users/users.component';
 import { UsersDetailsComponent } from './users-details/users-details.component';
+import { routeGuard } from '../services/authguard';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -19,11 +20,13 @@ const routes: Routes = [
       // },
       {
         path: 'users',
-        component: UsersComponent
+        component: UsersComponent,
+        canActivate: [routeGuard]
       },
       {
         path: 'user-profile',
-        component: UsersDetailsComponent
+        component: UsersDetailsComponent,
+        canActivate: [routeGuard]
       }
     
     ]
