@@ -13,6 +13,8 @@ import { SublevelMenuComponent } from './sidenav/sublevel-menu.component';
 import { UsersComponent } from './users/users.component';
 import { UsersTableComponent } from './users-table/users-table.component';
 import { UsersDetailsComponent } from './users-details/users-details.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 // import { AuthComponent } from '../auth/auth.component';
 // import { ReactiveFormsModule , FormsModule} from '@angular/forms';
 // import { EditModalComponent } from './components/edit-modal/edit-modal.component';
@@ -35,6 +37,7 @@ import { UsersDetailsComponent } from './users-details/users-details.component';
   imports: [
     CommonModule,
     ModulesRoutingModule,
+    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' })
     // ReactiveFormsModule,
     // FormsModule
   ]
