@@ -59,7 +59,7 @@
            routerLinkActive="active"
                     >
         <img class="sidenav-link-icon" src ="assets/icons/sign-out 1.svg" style="height: 22px ; width: 22px;">
-        <span class="sidenav-link-text pl-[3.5vh] text-[15px] text-[#39496c]" @fadeInOut *ngIf="collapsed">
+        <span class="sidenav-link-text pl-[3.5vh] text-[15px] text-[#39496c]" @fadeInOut *ngIf="collapsed" (click)="logout() ">
             Logout
         </span>
         </a>

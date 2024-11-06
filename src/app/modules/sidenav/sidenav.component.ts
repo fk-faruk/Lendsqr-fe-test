@@ -3,7 +3,7 @@ import { Component, Output, EventEmitter, OnInit, HostListener } from '@angular/
 import { Router } from '@angular/router';
 import { fadeInOut, INavbarData } from './helper';
 import { navbarData } from './nav-data';
-
+import { AuthserviceService } from 'src/app/services/authservice.service';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -46,7 +46,7 @@ export class SidenavComponent implements OnInit {
     }
   }
 
-  constructor(public router: Router) {}
+  constructor(public router: Router , private auth: AuthserviceService) {}
 
   ngOnInit(): void {
       this.screenWidth = window.innerWidth;
@@ -81,5 +81,9 @@ export class SidenavComponent implements OnInit {
         }
       }
     }
+  }
+
+  logout() {
+    this.auth.loggedOut()
   }
 }
