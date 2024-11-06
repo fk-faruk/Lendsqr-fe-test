@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
 import { ViewChild, ViewContainerRef } from '@angular/core';
-import { FormModalComponent } from '../components/form-modal/form-modal.component';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { Users } from '../models/users';
@@ -17,7 +16,7 @@ export class UsersTableComponent {
 
   modalContainer!: ViewContainerRef;
 
-  show: boolean = false;
+  selectedUserId: string = '';
 
   openForm: boolean = false;
 
@@ -110,17 +109,17 @@ export class UsersTableComponent {
     // console.log('modal has been clicked')
   }
 
-  openModal() {
-    this.modalContainer.clear(); // Clear any previously loaded component
-    this.modalContainer.createComponent(FormModalComponent); // Directly create the component
-  }
+  
 
   routeTo() {
     this.route.navigate(['/dashboard/user-profile']);
   }
 
-  showCard() {
-    this.show = !this.show;
+  showCard(data : any) {
+    this.selectedUserId = this.selectedUserId === data.id ? null : data.id; 
+
+    let userProfile = JSON.stringify(data)
+    localStorage.setItem('user-profile', userProfile )
   }
 
   closeModal() {
