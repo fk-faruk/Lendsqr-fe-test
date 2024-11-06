@@ -94,7 +94,7 @@ export const navbarData: INavbarData[] = [
         items: [
             {
                 icon: 'assets/icons/home 1.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/dashboard',
                 label: 'Dashboard '
             },
             // {
@@ -105,42 +105,42 @@ export const navbarData: INavbarData[] = [
         secondItems: [
             {
                 icon: 'assets/icons/user-friends 1.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/users',
                 label: 'Users'
             },
             {
                 icon: 'assets/icons/users 1.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/guarantors',
                 label: 'Guarantors'
             },
             {
                 icon: 'assets/icons/sack 1.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/loans',
                 label: 'Loans'
             },
             {
                 icon: 'assets/icons/handshake-regular 1.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/models',
                 label: 'Decision Models'
             },
             {
                 icon: 'assets/icons/piggy-bank 1.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/savings',
                 label: 'Savings'
             },
             {
                 icon: 'assets/icons/Group 104.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/loan_request',
                 label: 'Loan Request'
             },
             {
                 icon: 'assets/icons/user-check 1.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/whitelist',
                 label: 'Whitelist'
             },
             {
                 icon: 'assets/icons/user-times 1.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/karma',
                 label: 'Karma'
             },
         ],
@@ -148,69 +148,69 @@ export const navbarData: INavbarData[] = [
         thirdItems: [
             {
                 icon: 'assets/icons/briefcase 1.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/organization',
                 label: 'Organization'
             },
             {
                 icon: 'assets/icons/Group 104.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/loan_porduct',
                 label: 'Loan Products'
             },
             {
                 icon: 'assets/icons/np_bank_148501_000000 1.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/savings',
                 label: 'Savings Products'
             },
             {
                 icon: 'assets/icons/coins-solid 1.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/fees',
                 label: 'Fees and Charges'
             }, 
             {
                 icon: 'assets/icons/icon.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/transactions',
                 label: 'Transactions'
             },
             {
                 icon: 'assets/icons/galaxy 1.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/services',
                 label: 'Services'
             },
             {
                 icon: 'assets/icons/user-cog 1.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/amount',
                 label: 'Service Amount'
             },
             {
                 icon: 'assets/icons/scroll 1.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/settlements',
                 label: 'Settlements'
             }, 
             {
                 icon: 'assets/icons/chart-bar 2.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/reports',
                 label: 'Reports'
             }, 
         ],
         fourthItems: [
             {
                 icon: 'assets/icons/sliders-h 1.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/preference',
                 label: 'Preferences'
             },
             {
                 icon: 'assets/icons/badge-percent 1.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/fees',
                 label: 'Fees and Prcing'
             }, 
             {
                 icon: 'assets/icons/clipboard-list 1.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/audit',
                 label: 'Audit Logs'
             }, 
             {
                 icon: 'assets/icons/tire 1.svg',
-                routeLink: '/dashboard',
+                routeLink: '/dashboard/messages',
                 label: 'Systems Messages'
             }, 
         ]
