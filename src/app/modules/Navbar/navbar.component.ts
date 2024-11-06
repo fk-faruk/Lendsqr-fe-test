@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-body',
@@ -14,6 +15,8 @@ export class NavbarComponent {
 
   constructor(private router: Router) {}
 
+  adminName : string | null = ''
+
   routeToSignIn() {
     this.router.navigate(['/auth/signin']);
   }
@@ -26,5 +29,16 @@ export class NavbarComponent {
       styleClass = 'body-md-screen'
     }
     return styleClass;
+  }
+
+
+  // ngOnit() {
+  //  this.adminName = localStorage.getItem('adminName')
+  //  console.log(this.adminName)
+  // }
+
+  ngOnInit() {
+       this.adminName = localStorage.getItem('adminName')
+   console.log(this.adminName)
   }
 }
