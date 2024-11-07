@@ -52,7 +52,7 @@ enabling administrators to review and act on user information in a centralized, 
 ## Installation
 1. Clone the project from Gitlab using SSH.
     ```bash
-    git clone 
+    git clone "https://github.com/fk-faruk/lendsqr-fe-test.git"
     ```
 2. Load the Angular project by running `ng serve`
 
