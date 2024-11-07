@@ -2,256 +2,455 @@
 
 <ngx-spinner type="ball-scale-multiple"></ngx-spinner>
 
-
-
-
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-                <th scope="col" class="px-6 py-3">
-                    <div class="flex items-center">
-                        ORGANIZATION
-                        <a class="cursor-pointer"  (click)="open()">
-                            <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 512 512"><path fill="currentColor" d="M16 120h480v48H16zm80 112h320v48H96zm96 112h128v48H192z"/></svg>
-                        </a>
-                    </div>
-                  
-                    <div class="absolute inset-x-[12vh]  z-10 "
-                    [ngClass]="
-                      openForm === true
-                        ? 'flex bg-white text-xs border-gray-500 text-gray-800 px-4 rounded w-[240px]'
-                        : 'hidden'
-                    "
-                    role="alert"
-                  >
-              
-                  <span class="flex items-center justify-start">
-                    <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all ">
-                        <form action="">
-                            <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                                <div class="sm:flex-col sm:items-start">
-                                    <label for="small" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Organization</label>
-                                    <select id="small" class="block w-full p-2 mb-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                      <option selected>Select</option>
-                                      <option value="Lendsqr">Lendsqr</option>
-                                      
-                                    </select> 
-                
-                                    <div class="mb-2">
-                                        <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
-                                        <input type="text" id="small-input" placeholder="username" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    </div>
-                
-                                    <div class="mb-2">
-                                        <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                                        <input type="text" id="small-input" placeholder="Email" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    </div>
-                
-                                    
-                                    <div class="relative max-w-sm mb-2">
-                                        <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date</label>
-                
-                                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                           <svg class="w-4 mt-[3vh] h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                              <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                                            </svg>
-                                        </div>
-                                        <input id="datepicker-autohide" datepicker datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
-                                      </div>
-                
-                                      <div class="mb-2">
-                                        <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone Number</label>
-                                        <input type="tel" id="small-input" placeholder="Phone Number" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    </div>
-                  
-                                    <div class="mb-2">
-                                        <label for="small" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Status</label>
-                                    <select id="small" class="block w-full p-2 mb-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                      <option selected>Select</option>
-                                      <option value="1">Inactive</option>
-                                      <option value="1">Pending</option>
-                
-                                      
-                                    </select> 
-                                    </div>
-                              </div>
-                              <div class=" px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                                <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-[#3ccac5] text-base font-medium text-white hover:bg-[#3ccac5] sm:ml-3 sm:w-auto sm:text-sm">
-                                  Confirm
-                                </button>
-                                <button type="button" (click)=" closeModal()"  class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
-                                  Cancel
-                                </button>
-                              </div>
-                            </div>
-                        </form>
-                    
-                  </div>
-                </span>
-                
-                  </div>
-
-
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    <div class="flex items-center">
-                        USERNAME
-                        <a href="">
-                            <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 512 512"><path fill="currentColor" d="M16 120h480v48H16zm80 112h320v48H96zm96 112h128v48H192z"/></svg>
-                        </a>
-                    </div>
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    <div class="flex items-center">
-                        EMAIL
-                        <a href="">
-                            <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 512 512"><path fill="currentColor" d="M16 120h480v48H16zm80 112h320v48H96zm96 112h128v48H192z"/></svg>
-                        </a>
-                    </div>
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    <div class="flex items-center">
-                        PHONE NUMBER
-                        <a href="">
-                            <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 512 512"><path fill="currentColor" d="M16 120h480v48H16zm80 112h320v48H96zm96 112h128v48H192z"/></svg>
-                        </a>
-                    </div>
-                </th>
-
-                <th scope="col" class="px-6 py-3">
-                    <div class="flex items-center">
-                        DATE JOINED
-                        <a href="">
-                            <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 512 512"><path fill="currentColor" d="M16 120h480v48H16zm80 112h320v48H96zm96 112h128v48H192z"/></svg>
-                        </a>
-                    </div>
-                </th>
-
-                <th scope="col" class="px-6 py-3">
-                    <div class="flex items-center">
-                        STATUS
-                        <a href="">
-                            <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 512 512"><path fill="currentColor" d="M16 120h480v48H16zm80 112h320v48H96zm96 112h128v48H192z"/></svg>
-                        </a>
-                    </div>
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    <span class="sr-only">Edit</span>
-                </th>
-            </tr>
-        </thead>
-        <tbody *ngFor="let data of users">
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-
-                <th scope="row" class="px-6 py-3  font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    {{data.profile.organization}}
-                </th>
-                <td class="px-6 py-3 ">
-                    {{data.username}}
-                </td>
-                <td class="px-6 py-3">
-                    {{data.email}}
-                </td>
-                <td class="px-6 py-3 ">
-                    {{data.profile.phone}}
-                </td>
-                <td class="px-6 py-3 ">
-                    {{data.date_joined | date: 'MMM d, y h:mm a'}}
-                </td>
-                <td class=" px-4 py-3  text-left" >
-               <span class=" py-2 px-5" [ngClass]="{
-                'active': data.profile.status == 'Active',
-                'pending': data.profile.status == 'Pending',
-                'inactive': data.profile.status == 'Inactive',
-                'blacklist': data.profile.status == 'Blacklisted'
-              }"> {{data.profile.status}}</span>
-                </td>
-                <td class="px-6  text-right ">
-                    <!-- <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" (click)="showCard()">Edit</a> -->
-                    <div (click)="showCard(data)" class="hover:bg-gray-200 rounded-full h-[2.8em] w-[2.8em] p-2 cursor-pointer">
-                    <svg  xmlns="http://www.w3.org/2000/svg"  width="1.7em" height="1.7em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a2 2 0 1 0 0 4a2 2 0 0 0 0-4m-2 9a2 2 0 1 1 4 0a2 2 0 0 1-4 0m0 7a2 2 0 1 1 4 0a2 2 0 0 1-4 0"/></svg>
-                    </div>
-                </td>
-
-                <div class="sm:absolute sm:inset-x-[130vh]  sm:z-10   absolute inset-x-[85vh]  z-10  mt-[7vh]"
-                [ngClass]="
-                  selectedUserId === data.id
-                    ? 'flex bg-white border mt-2 text-xs border-gray-500 text-gray-800 px-4 py-3 rounded w-[170px]'
-                    : 'hidden'
-                "
-                role="alert"
+  <table
+    class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+  >
+    <thead class="text-xs text-gray-700 bg-gray-50">
+      <tr>
+        <th scope="col" class="px-6 py-3">
+          <div class="flex items-center">
+            ORGANIZATION
+            <a class="cursor-pointer" (click)="open()">
+              <svg
+                class="ml-2"
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.5em"
+                height="1.5em"
+                viewBox="0 0 512 512"
               >
-                <span class="flex-col gap-4">
-                    <button class=" bg-transparent mt-4" (click)="routeTo()">
-                        <div class="flex flex-row gap-3">
-                                <img src="assets/icons/np_view_1214519_000000 1.svg" alt="" style="height: 20px; width: 20px;" >
-                                <p class="text-[15px] mt-1 "> View Details</p>
-                        </div>
-                    </button>
+                <path
+                  fill="currentColor"
+                  d="M16 120h480v48H16zm80 112h320v48H96zm96 112h128v48H192z"
+                />
+              </svg>
+            </a>
+          </div>
 
-                    <button class=" bg-transparent mt-4">
-                        <div class="flex flex-row gap-3">
-                                <img src="assets/icons/np_delete-friend_3248001_000000 1.svg" alt="" style="height: 20px; width: 20px;">
-                                <p class="text-[15px] mt-1"> Blacklist User</p>
-                        </div>
-                    </button>
+          <div
+            class="absolute inset-x-[12vh] z-10"
+            [ngClass]="
+              openForm === true
+                ? 'flex bg-white text-xs border-gray-500 text-gray-800 px-4 rounded w-[240px]'
+                : 'hidden'
+            "
+            role="alert"
+          >
+            <span class="flex items-center justify-start">
+              <div
+                class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all"
+              >
+                <form action="">
+                  <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex-col sm:items-start">
+                      <label
+                        for="small"
+                        class="block mb-2 text-sm font-medium text-gray-900"
+                        >Organization</label
+                      >
+                      <select
+                        id="small"
+                        class="block w-full p-2 mb-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+                      >
+                        <option
+                          selected
+                          class="text-sm font-medium text-gray-900"
+                        >
+                          Select
+                        </option>
+                        <option value="Lendsqr">Lendsqr</option>
+                      </select>
 
-                    <button class=" bg-transparent mt-4">
-                        <div class="flex flex-row gap-3">
-                                <img src="assets/icons/np_user_2995993_000000 1.svg" alt="" style="height: 20px; width: 20px;">
-                                <p class="text-[15px] mt-1">Activate User</p>
+                      <div class="mb-2">
+                        <label
+                          for="small-input"
+                          class="block mb-2 text-sm font-medium text-gray-900"
+                          >Username</label
+                        >
+                        <input
+                          type="text"
+                          id="small-input"
+                          placeholder="username"
+                          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500"
+                        />
+                      </div>
+
+                      <div class="mb-2">
+                        <label
+                          for="small-input"
+                          class="block mb-2 text-sm font-medium text-gray-900"
+                          >Email</label
+                        >
+                        <input
+                          type="text"
+                          id="small-input"
+                          placeholder="Email"
+                          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500"
+                        />
+                      </div>
+
+                      <div class="relative max-w-sm mb-2">
+                        <label
+                          for="small-input"
+                          class="block mb-2 text-sm font-medium text-gray-900"
+                          >Date</label
+                        >
+
+                        <div
+                          class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+                        >
+                          <svg
+                            class="w-4 mt-[3vh] h-4 text-gray-500 dark:text-gray-400"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
+                            />
+                          </svg>
                         </div>
-                    </button>
-                  </span
-                >
+                        <input
+                          id="datepicker-autohide"
+                          datepicker
+                          datepicker-autohide
+                          type="text"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+                          placeholder="Select date"
+                        />
+                      </div>
+
+                      <div class="mb-2">
+                        <label
+                          for="small-input"
+                          class="block mb-2 text-sm font-medium text-gray-900"
+                          >Phone Number</label
+                        >
+                        <input
+                          type="tel"
+                          id="small-input"
+                          placeholder="Phone Number"
+                          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500"
+                        />
+                      </div>
+
+                      <div class="mb-2">
+                        <label
+                          for="small"
+                          class="block mb-2 text-sm font-medium text-gray-900"
+                          >Status</label
+                        >
+                        <select
+                          id="small"
+                          class="block w-full p-2 mb-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+                        >
+                          <option
+                            selected
+                            class="text-sm font-medium text-gray-900"
+                          >
+                            Select
+                          </option>
+                          <option value="1">Inactive</option>
+                          <option value="1">Pending</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                      <button
+                        type="button"
+                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-[#3ccac5] text-base font-medium text-white hover:bg-[#3ccac5] sm:ml-3 sm:w-auto sm:text-sm"
+                      >
+                        Confirm
+                      </button>
+                      <button
+                        type="button"
+                        (click)="closeModal()"
+                        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                </form>
               </div>
-            </tr>
-        
-        </tbody>
-    </table>
+            </span>
+          </div>
+        </th>
+        <th scope="col" class="px-6 py-3">
+          <div class="flex items-center">
+            USERNAME
+            <a href="">
+              <svg
+                class="ml-2"
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.5em"
+                height="1.5em"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  fill="currentColor"
+                  d="M16 120h480v48H16zm80 112h320v48H96zm96 112h128v48H192z"
+                />
+              </svg>
+            </a>
+          </div>
+        </th>
+        <th scope="col" class="px-6 py-3">
+          <div class="flex items-center">
+            EMAIL
+            <a href="">
+              <svg
+                class="ml-2"
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.5em"
+                height="1.5em"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  fill="currentColor"
+                  d="M16 120h480v48H16zm80 112h320v48H96zm96 112h128v48H192z"
+                />
+              </svg>
+            </a>
+          </div>
+        </th>
+        <th scope="col" class="px-6 py-3">
+          <div class="flex items-center">
+            PHONE NUMBER
+            <a href="">
+              <svg
+                class="ml-2"
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.5em"
+                height="1.5em"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  fill="currentColor"
+                  d="M16 120h480v48H16zm80 112h320v48H96zm96 112h128v48H192z"
+                />
+              </svg>
+            </a>
+          </div>
+        </th>
 
-    <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4" aria-label="Table navigation">
-        <span class="pl-7 text-sm font-normal text-gray-500 dark:text-gray-400">
-            Showing
-            <span class="font-semibold text-gray-900 dark:text-white"> {{ (currentPage * itemsPerPage)  + 1 }} -  {{ ((currentPage + 1) * itemsPerPage) > userData.length ? userData.length : ((currentPage + 1) * itemsPerPage) }}</span>
-            of
-            <span class="font-semibold text-gray-900 dark:text-white">{{userData.length}}</span>
-        </span>
-        <ul class="pr-7 inline-flex items-stretch -space-x-px">
-            <li>
-                <button  (click)="previousPage()" [disabled]="currentPage === 0" class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                   
-                    <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
-                    </svg>
-                    <span >Previous</span>
-                  </button>
-            </li>
-          
-            <li>
-                <button (click)="nextPage()" [disabled]="currentPage >= totalPages - 1" class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                    <span >Next</span>
-                    <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                    </svg>
-                </button>
-            </li>
-        </ul>
-    </nav>
+        <th scope="col" class="px-6 py-3">
+          <div class="flex items-center">
+            DATE JOINED
+            <a href="">
+              <svg
+                class="ml-2"
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.5em"
+                height="1.5em"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  fill="currentColor"
+                  d="M16 120h480v48H16zm80 112h320v48H96zm96 112h128v48H192z"
+                />
+              </svg>
+            </a>
+          </div>
+        </th>
+
+        <th scope="col" class="px-6 py-3">
+          <div class="flex items-center">
+            STATUS
+            <a href="">
+              <svg
+                class="ml-2"
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.5em"
+                height="1.5em"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  fill="currentColor"
+                  d="M16 120h480v48H16zm80 112h320v48H96zm96 112h128v48H192z"
+                />
+              </svg>
+            </a>
+          </div>
+        </th>
+        <th scope="col" class="px-6 py-3">
+          <span class="sr-only">Edit</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let data of users">
+      <tr class="bg-white border-b">
+        <th
+          scope="row"
+          class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap"
+        >
+          {{ data.profile.organization }}
+        </th>
+        <td class="px-6 py-3">
+          {{ data.username }}
+        </td>
+        <td class="px-6 py-3">
+          {{ data.email }}
+        </td>
+        <td class="px-6 py-3">
+          {{ data.profile.phone }}
+        </td>
+        <td class="px-6 py-3">
+          {{ data.date_joined | date : "MMM d, y h:mm a" }}
+        </td>
+        <td class="px-4 py-3 text-left">
+          <span
+            class="py-2 px-5"
+            [ngClass]="{
+              active: data.profile.status == 'Active',
+              pending: data.profile.status == 'Pending',
+              inactive: data.profile.status == 'Inactive',
+              blacklist: data.profile.status == 'Blacklisted'
+            }"
+          >
+            {{ data.profile.status }}</span
+          >
+        </td>
+        <td class="px-6 text-right">
+          <!-- <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" (click)="showCard()">Edit</a> -->
+          <div
+            (click)="showCard(data)"
+            class="hover:bg-gray-200 rounded-full h-[2.8em] w-[2.8em] p-2 cursor-pointer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1.7em"
+              height="1.7em"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M12 3a2 2 0 1 0 0 4a2 2 0 0 0 0-4m-2 9a2 2 0 1 1 4 0a2 2 0 0 1-4 0m0 7a2 2 0 1 1 4 0a2 2 0 0 1-4 0"
+              />
+            </svg>
+          </div>
+        </td>
+
+        <div
+          class="sm:absolute sm:inset-x-[130vh] sm:z-10 absolute inset-x-[85vh] z-10 mt-[7vh]"
+          [ngClass]="
+            selectedUserId === data.id
+              ? 'flex bg-white border mt-2 text-xs border-gray-500 text-gray-800 px-4 py-3 rounded w-[170px]'
+              : 'hidden'
+          "
+          role="alert"
+        >
+          <span class="flex-col gap-4">
+            <button class="bg-transparent mt-4" (click)="routeTo()">
+              <div class="flex flex-row gap-3">
+                <img
+                  src="assets/icons/np_view_1214519_000000 1.svg"
+                  alt=""
+                  style="height: 20px; width: 20px"
+                />
+                <p class="text-[15px] mt-1">View Details</p>
+              </div>
+            </button>
+
+            <button class="bg-transparent mt-4">
+              <div class="flex flex-row gap-3">
+                <img
+                  src="assets/icons/np_delete-friend_3248001_000000 1.svg"
+                  alt=""
+                  style="height: 20px; width: 20px"
+                />
+                <p class="text-[15px] mt-1">Blacklist User</p>
+              </div>
+            </button>
+
+            <button class="bg-transparent mt-4">
+              <div class="flex flex-row gap-3">
+                <img
+                  src="assets/icons/np_user_2995993_000000 1.svg"
+                  alt=""
+                  style="height: 20px; width: 20px"
+                />
+                <p class="text-[15px] mt-1">Activate User</p>
+              </div>
+            </button>
+          </span>
+        </div>
+      </tr>
+    </tbody>
+  </table>
+
+  <nav
+    class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4"
+    aria-label="Table navigation"
+  >
+    <span class="pl-7 text-sm font-normal text-gray-500 dark:text-gray-400">
+      Showing
+      <span class="font-semibold text-gray-900">
+        {{ currentPage * itemsPerPage + 1 }} -
+        {{
+          (currentPage + 1) * itemsPerPage > userData.length
+            ? userData.length
+            : (currentPage + 1) * itemsPerPage
+        }}</span
+      >
+      of
+      <span class="font-semibold text-gray-900">{{ userData.length }}</span>
+    </span>
+    <ul class="pr-7 inline-flex items-stretch -space-x-px">
+      <li>
+        <button
+          (click)="previousPage()"
+          [disabled]="currentPage === 0"
+          class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+        >
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            fill="currentColor"
+            viewbox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span>Previous</span>
+        </button>
+      </li>
+
+      <li>
+        <button
+          (click)="nextPage()"
+          [disabled]="currentPage >= totalPages - 1"
+          class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+        >
+          <span>Next</span>
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            fill="currentColor"
+            viewbox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
 </div>
-
 
 <!-- <div *ngIf="show" class="fixed inset-0 z-10 ">
     <span class="w-52 h-52 border bg-black text-white flex justify-center items-center" >
         Modal display
     </span>
 </div> -->
-
-
-
-
-
-
 
 <!-- <ng-template #modalContainer></ng-template> -->
